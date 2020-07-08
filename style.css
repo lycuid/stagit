@@ -1,7 +1,20 @@
+:root {
+	--color-primary:          rgb(38, 192, 128);
+	--color-secondary:        rgb(144, 198, 149);
+
+	--color-bg-primary:       rgb(19, 19, 19);
+	--color-bg-secondary:     rgb(13, 13, 13);
+	--link-color:             rgb(69, 221, 158);
+}
+
 body {
-	color: #000;
-	background-color: #fff;
 	font-family: monospace;
+	color: var(--color-primary);
+	background-color: var(--color-bg-primary);
+}
+
+img {
+	border: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -11,10 +24,6 @@ h1, h2, h3, h4, h5, h6 {
 
 img, h1, h2 {
 	vertical-align: middle;
-}
-
-img {
-	border: 0;
 }
 
 a:target {
@@ -29,11 +38,13 @@ a.line {
 }
 
 #blob a {
-	color: #777;
+	color: #666;
+	border-right: 2.5px solid #666;
+	border-bottom: none;
+	padding: 0 5px 0 0;
 }
 
 #blob a:hover {
-	color: blue;
 	text-decoration: none;
 }
 
@@ -46,8 +57,8 @@ table td {
 }
 
 #content table td {
-	vertical-align: top;
 	white-space: nowrap;
+	vertical-align: top;
 }
 
 #branches tr:hover td,
@@ -55,7 +66,7 @@ table td {
 #index tr:hover td,
 #log tr:hover td,
 #files tr:hover td {
-	background-color: #eee;
+	background-color: var(--color-bg-secondary);
 }
 
 #index tr td:nth-child(2),
@@ -69,34 +80,60 @@ td.num {
 	text-align: right;
 }
 
+tbody td.num {
+	color: #dedede;
+}
+
+thead td {
+	color: var(--color-secondary);
+}
+
 .desc {
 	color: #777;
+	font-weight: bolder;
 }
 
 hr {
 	border: 0;
-	border-top: 1px solid #777;
-	height: 1px;
+	border-top: 1px dashed #aaa;
+	border-bottom: 1px dashed #aaa;
+	height: 2.5px;
+}
+
+#content hr {
+	display: none;
 }
 
 pre {
 	font-family: monospace;
+	padding: 1rem;
+	background-color: var(--color-bg-secondary);
+	color: #fff;
+}
+
+pre#blob {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+pre a[class] {
+	border: none;
 }
 
 pre a.h {
-	color: #00a;
+	color: #3867d6;
 }
 
 .A,
 span.i,
 pre a.i {
-	color: #070;
+	color: #20bf6b;
 }
 
 .D,
 span.d,
 pre a.d {
-	color: #e00;
+	color: #ff4757;
 }
 
 pre a.h:hover,
@@ -104,3 +141,14 @@ pre a.i:hover,
 pre a.d:hover {
 	text-decoration: none;
 }
+
+a {
+	color: #dedede;
+	text-decoration: none;
+	border-bottom: 1px solid #dedede;
+}
+a:hover {
+	color: #aaa;
+	border: none;
+}
+
